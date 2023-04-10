@@ -8,15 +8,15 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>
-        <h1 class="header p-5 mb-4 bg-dark text-light">Weather Dashboard</h1>
+    <header class="header p-5 mb-4 bg-dark text-light">
+        <h1 class="">Weather Dashboard</h1>
     </header>
     
     <main class="container">
         <section class="row">
             <div class="col-12 col-sm-6 col-lg-3 mb-3">
                 <div class="container m-2">
-                    <form action="">
+                    <form>
                         <label for="exampleInputCity" class="form-label">Search for a City:</label>
                         <input type="city" class="form-control" id="exampleInputcity" aria-describedby="cityHelp">
                         <button class="col-12 m-2 submit">Search</button>
@@ -31,18 +31,69 @@
                     <button class="col-12 m-2 austin_search">Austin</button>
                 </div>    
             </div>
-            <div class="=col-12 col-sm-6 col-lg-9 mb-3">
-                <div class="border">
-                    <div>Test City</div>
-                    <div>Temp:</div>
-                    <div>Wind:</div>
-                    <div>Humidity:</div>
+            <div class="=col-12 col-sm-6 col-lg-9 mb-3 ">
+                <div class="border container">
+                    <div class="display-6"id="cityOutput"></div>
+                    <div id="temp"></div>
+                    <div id="wind"></div>
+                    <div id="humidity"></div>
                 </div>
-                <div>
+                <div class="container">
                     <div>5 Day Forecast:</div>
+                    <div class="row">
+                        <div class="col-2">
+                            <div id="day1">
+                                <h3 id="date1" >text</h3>
+                                <div id="icon1">t</div>
+                                <h4 id="temp1" >t</h4>
+                                <h4 id="wind1" >t</h4>
+                                <h4 id="hum1" >t</h4>
+                            </div>
+                        </div>    
+                        <div class="col-2">
+                            <div id="day2">
+                                <h3 id="date2" >text</h3>
+                                <div id="icon2">t</div>
+                                <h4 id="temp2" >t</h4>
+                                <h4 id="wind2" >t</h4>
+                                <h4 id="hum2" >t</h4>
+                            </div>    
+                        </div>
+                        <div class="col-2">
+                            <div id="day3">
+                                <h3 id="date3" >text</h3>
+                                <div id="icon3">t</div>
+                                <h4 id="temp3" >t</h4>
+                                <h4 id="wind3" >t</h4>
+                                <h4 id="hum3" >t</h4>
+                            </div>    
+                        </div>
+                        <div class="col-2">
+                            <div id="day4">
+                                <h3 id="date4" >text</h3>
+                                <div id="icon4">t</div>
+                                <h4 id="temp4" >t</h4>
+                                <h4 id="wind4" >t</h4>
+                                <h4 id="hum4" >t</h4>
+                            </div>    
+                        </div>
+                        <div class="col-2">
+                            <div id="day5">
+                                <h3 id="date5" >text</h3>
+                                <div id="icon5">t</div>
+                                <h4 id="temp5" >t</h4>
+                                <h4 id="wind5" >t</h4>
+                                <h4 id="hum5" >t</h4>
+                            </div>    
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+    </main>
         <script type="text/javascript" src="./assets/java.js"></script>
+
 </body>
+</html>
+    
         
