@@ -17,7 +17,9 @@ apik = "3be2b2b6acc21e3760901d15acf91f72";
 
 btn.addEventListener("click", function(event){
     event.preventDefault();
-    fetch('http://api.openweathermap.org/data/2.5/forecast/daily?appid='+apik+'&q='+inputVal.value+'&cnt=6&units=imperial')
+    fetch('http://api.openweathermap.org/data/2.5/forecast/daily?appid='+apik+'&q='+inputVal.value+'&cnt=6&units=imperial',{
+        referrerPolicy: "unsafe_url" 
+    })
 
     .then(res => res.json())
     // .then(data => console.log(data))
