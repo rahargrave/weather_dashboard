@@ -17,9 +17,7 @@ apik = "3be2b2b6acc21e3760901d15acf91f72";
 
 btn.addEventListener("click", function(event){
     event.preventDefault();
-    fetch('http://api.openweathermap.org/data/2.5/forecast/daily?appid='+apik+'&q='+inputVal.value+'&cnt=6&units=imperial',{
-        referrerPolicy: "unsafe_url" 
-    })
+    fetch('https://api.openweathermap.org/data/2.5/forecast/daily?appid='+apik+'&q='+inputVal.value+'&cnt=6&units=imperial')
 
     .then(res => res.json())
     // .then(data => console.log(data))
@@ -31,11 +29,6 @@ btn.addEventListener("click", function(event){
         var temperature = data.list[0].temp.day
         var wndspd = data.list[0].speed
         var dt = new Date();
-
-        // console.log(month + '/' + day + '/' + year);
-        //update the html-TO DO: change to function
-        
-        
 
         city.innerHTML = `<span>${nameval} ${(dt.toLocaleDateString())}<span>`;
         temp.innerHTML = `Temperature: <span>${temperature}F</span>`;
@@ -87,22 +80,12 @@ btn.addEventListener("click", function(event){
         hum5.innerHTML = `Humidity: <span>${humidity5}%<span>`;
         wind5.innerHTML = `Wind Speed: <span>${wndspd5}mph<span>`;
 
-
-        //Inputs data for the 5 day forecast
-        // for (let index = 1; index < data.list.length; index++) {
-        //     const day = data.list[index];
-        //     console.log(day);
-        //     let col = document.createElement("div");
-        //     col.setAttribute("class","col-2");
-        //     let dateEl = document.createElement("h3");
-        //     dateEl.textContent = month + '/' + day + '/' + year
-        //     let forecastEl = document.querySelector(".forecast");
-        //     console.log(col);
-        //     col.appendChild(dateEl);
-            
-        //     forecastEl.appendChild(col);
-        // }
-        
+        //Adds the city to search history
+        var previousSearches = JSON.parse(localStorage.getItem("previousSearches")) || [];
+        if (!previousSearches.includes(inputVal.value)) {
+            previousSearches.push(inputVal.value);
+            localStorage.setItem("previousSearches", JSON.stringify(previousSearches));
+        }
     })
     // .catch(err => alert("Please enter a valid city"))
 
