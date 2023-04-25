@@ -10,14 +10,11 @@ var temp = document.querySelector("#temp");
 var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
 
-
 apik = "3be2b2b6acc21e3760901d15acf91f72";
-
-
 
 btn.addEventListener("click", function(event){
     event.preventDefault();
-    fetch('https://api.openweathermap.org/data/2.5/forecast/daily?appid='+apik+'&q='+inputVal.value+'&cnt=6&units=imperial')
+    fetch('https://floating-headland-95050.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast/daily?appid='+apik+'&q='+inputVal.value+'&cnt=6&units=imperial')
 
     .then(res => res.json())
     // .then(data => console.log(data))
